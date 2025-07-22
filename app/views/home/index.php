@@ -11,7 +11,7 @@
                 
             <div class="col-sm-6 text-center">
                 <p class="lead">Search a movie title:</p>
-                <form action="/search" method="post">
+                <form action="/search/get" method="post">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Movie title" aria-label="Movie title" aria-describedby="button-addon2" name="title">
                         <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
@@ -24,7 +24,7 @@
             <p class="lead">Or, enter the titles of three favourite movies and we'll recommend a movie we think you'll like:</p>
             
             <div class="col-sm-6">
-                <form action="/recommend" method="post">
+                <form action="/search/reco" method="post">
                     <fieldset>
                       <div class="form-group">
                         <label for="Rtitle1">Movie 1:</label>
