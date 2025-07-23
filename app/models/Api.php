@@ -24,13 +24,14 @@ class Api {
     }
 
     public function review($title) {
-        $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent" . $_ENV['gemini_key'];
+        echo "In review method for movie: " . $title;
+        $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" . $_ENV['gemini_key'];
         $data = array(
             'contents' => array(
                 array(
                     'parts' => array(
                         array(
-                            'text' => "Write a movie review for the movie " . $title
+                            'text' => "write a movie review for the movie " . $title
                         )
                     )
                 )
@@ -47,10 +48,11 @@ class Api {
         if(curl_errno($ch)) {
             echo 'Curl error:' . curl_error($ch);
         }
+        echo "Made it past curl";
         $data = json_decode($response, true);
         echo "<pre>";
-        echo print_r($data);
-        die;
+        echo $data['candidates'][0]['content']['parts'][0]['text'];
+
     }
 
 }

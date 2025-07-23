@@ -14,10 +14,16 @@
                     print_r ($_SESSION['movie']);
                 } ?>                
                 </p>
-                <br>
             </div>
             <div class="col-lg-12 text-center">
-                <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href='/home'">See a review of this movie</button>
+                <form action="/search/review" method="post">
+                    <div class="input-group mb-3">
+                        <button class="btn btn-secondary" type="submit" name="title" value="<?php echo $_SESSION['movie']['Title'] ?>">Read a review</button>
+                    </div>
+                </form>
+
+            </div>
+            <div id="review">
 
             </div>
         </div>
