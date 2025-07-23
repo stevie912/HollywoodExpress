@@ -48,7 +48,18 @@
         </div>
     </div>
 
-
+    <!-- toast for movie not found -->
+    <?php if (isset($_SESSION['no_movie'])) { ?>
+         <div class="toast show text-grey bg-primary-subtle bg-gradient border-1 position-absolute top-50 start-50 translate-middle" role="alert" aria-live="assertive" aria-atomic="true">
+             <div class="toast-body ">
+                 Sorry, we were unable to locate that movie. Please check the title or try another.
+                 <div class="mt-2 pt-2 border-top">
+                     <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="toast">Close</button>
+                 </div>
+             </div>
+         </div>																				 
+    <?php unset($_SESSION['no_movie']); } ?>
+    
     <!-- toast for denied access -->
     <?php if (isset($_SESSION['denied'])) { ?>
          <div class="toast show text-grey bg-danger bg-gradient border-1 position-absolute top-50 start-50 translate-middle" role="alert" aria-live="assertive" aria-atomic="true">

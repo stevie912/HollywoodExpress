@@ -18,4 +18,14 @@ class Search extends Controller {
     $api = $this->model('Api');
     $api->recommend($title1, $title2, $title3);
   }
+
+  public function result() {
+    $this->view('search/result');
+  }
+
+  public function review() {
+    $title = $_REQUEST['title'];
+    $api = $this->model('Api');
+    $api->review($title);
+  }
 }
