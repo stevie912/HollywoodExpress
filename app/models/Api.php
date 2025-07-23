@@ -24,34 +24,34 @@ class Api {
     }
 
     public function review($title) {
-        echo "In review method for movie: " . $title;
-        $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" . $_ENV['gemini_key'];
-        $data = array(
-            'contents' => array(
-                array(
-                    'parts' => array(
-                        array(
-                            'text' => "write a movie review for the movie " . $title
-                        )
-                    )
-                )
-            )
-        );
-        $json_data = json_encode($data);
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        $response = curl_exec($ch);
-        curl_close($ch);
-        if(curl_errno($ch)) {
-            echo 'Curl error:' . curl_error($ch);
-        }
-        echo "Made it past curl";
-        $data = json_decode($response, true);
-        echo "<pre>";
-        echo $data['candidates'][0]['content']['parts'][0]['text'];
+        // echo "In review method for movie: " . $title;
+        // $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" . $_ENV['gemini_key'];
+        // $data = array(
+        //     'contents' => array(
+        //         array(
+        //             'parts' => array(
+        //                 array(
+        //                     'text' => "write a movie review for the movie " . $title
+        //                 )
+        //             )
+        //         )
+        //     )
+        // );
+        // $json_data = json_encode($data);
+        // $ch = curl_init($url);
+        // curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+        // curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
+        // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        // $response = curl_exec($ch);
+        // curl_close($ch);
+        // if(curl_errno($ch)) {
+        //     echo 'Curl error:' . curl_error($ch);
+        // }
+        // echo "Made it past curl";
+        // $_SESSION['review'] = json_decode($response, true);
+        $_SESSION['review'] = "This is a review for the movie " . $title;
+
 
     }
 

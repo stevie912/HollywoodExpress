@@ -27,5 +27,6 @@ class Search extends Controller {
     $title = $_REQUEST['title'];
     $api = $this->model('Api');
     $api->review($title);
+    $this->view('/search/result');
   }
 }

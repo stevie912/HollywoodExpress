@@ -23,8 +23,13 @@
                 </form>
 
             </div>
-            <div id="review">
-
+            <div class="col-lg-9 text-center" id="review">
+                <?php if (isset($_SESSION['review'])) {
+                    echo "<pre>";
+                    echo $_SESSION['review'];
+                    echo $_SESSION['review']['candidates'][0]['content']['parts'][0]['text'];
+                    unset($_SESSION['review']);
+                } ?>
             </div>
         </div>
 
