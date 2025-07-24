@@ -122,6 +122,12 @@ class User {
      $_SESSION['contact_stored'] = true;
      header("Location: /home");
    }
+
+  public function rate($title, $rating) {
+    $db = db_connect();
+    $statement = $db->prepare("INSERT INTO ratings (user_id, movie_title, rating, date_added) VALUES (?, ?, ?, ?)");
+    $statement->execute([$_SESSION['user_id'], $title, $rating, date("Y-m-d H:i:s")]);
+  }
   
 }
       

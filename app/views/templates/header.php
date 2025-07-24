@@ -14,7 +14,7 @@
         <meta name="author" content="Steve Rhodes"
         <meta name="robots" content="noindex, nofollow"
     </head>
-    <body >
+    <body>
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-secondary">
   <div class="container">
     <a class="navbar-brand" href="/home">Hollywood</a>

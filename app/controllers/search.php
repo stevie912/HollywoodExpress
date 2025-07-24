@@ -23,6 +23,15 @@ class Search extends Controller {
     $this->view('search/result');
   }
 
+  public function rate() {
+    $rating = $_REQUEST['rating'];
+    $title = $_REQUEST['title'];
+    $_SESSION['rating'] = $rating;
+    $user = $this->model('User');
+    $user->rate($title, $rating);
+    $this->view('search/result');
+  }
+
   public function review() {
     $title = $_REQUEST['title'];
     $api = $this->model('Api');

@@ -1,37 +1,25 @@
 
 </body>
-    <footer class="footer fixed-bottom bg-light">
+    <footer class="footer bg-light" style="margin-top: 100px;">
       <div class="row align-items-center">
         <div class="col text-center">
             <br>
-            <a href="#" class="link-secondary">Things to come</a>
+            <a href="#" class="link-secondary">Report missing movie</a>
             <br>
-            <a href="#" class="link-secondary">Plans</a>
-            <br>
-            <a href="#"class="link-secondary">Ideas</a>
+            <a href="#" class="link-secondary">Report errors in listing</a>
         </div>
         <div class="col text-center">
             <br>
-            <a href="#" class="link-secondary">Things we're doing</a>
+            <a href="#" class="link-secondary">Order popcorn</a>
             <br>
-            <a href="#" class="link-secondary">Current status</a>
-            <br>
-            <a href="#" class="link-secondary">Bookings</a>
-        </div>
-        <div class="col text-center">
-            <br>
-            <a href="#" class="link-secondary">Past feats of glory</a>
-            <br>
-            <a href="#" class="link-secondary">Photos</a>
-            <br>
-            <a href="#" class="link-secondary">Awards!</a>
+            <a href="#" class="link-secondary">Audition</a>
         </div>
       </div>
 
     <div class="row ">
         <div class="col-lg-12 text-center" >
             <br>
-            <p class="text-secondary" style="margin-bottom: -4px;" ><small>This is the fine print. Anything may change at any time without warning. It's not our fault, you hired us.</small></p>
+            <p class="text-secondary" style="margin-bottom: -4px;" ><small>We make no claim as to the accuracy of information presented herein. It's not our fault, you hired us.</small></p>
             <p class="text-secondary" ><small>Copyright &copy; <?php echo date('Y'); ?> </small></p>
         </div>
     </div>
