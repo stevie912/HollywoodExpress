@@ -21,7 +21,7 @@
                 <br>
             </div>    
                 
-            <p class="lead">Or, enter the titles of three favourite movies and we'll recommend a movie we think you'll like:</p>
+            <p class="lead">Or, enter the titles of upto three favourite movies and we'll recommend a movie we think you'll like:</p>
             
             <div class="col-sm-6">
                 <form action="/search/reco" method="post">
@@ -32,14 +32,14 @@
                       </div>
                       <div class="form-group">
                         <label for="Rtitle2">Movie 2:</label>
-                        <input required type="text" id="Rtitle2" class="form-control" name="Rtitle2">
+                        <input type="text" id="Rtitle2" class="form-control" name="Rtitle2">
                       </div>
                       <div class="form-group">
                         <label for="Rtitle3">Movie 3:</label>
-                        <input required type="text" id="Rtitle3" class="form-control" name="Rtitle3">
+                        <input type="text" id="Rtitle3" class="form-control" name="Rtitle3">
                       </div>
                         <br>
-                        <button type="submit" value ="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" value ="submit" class="btn btn-secondary">Submit</button>
                     </fieldset>
                 </form>
             </div>

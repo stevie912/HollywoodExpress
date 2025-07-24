@@ -17,6 +17,7 @@ class Search extends Controller {
     $title3 = $_REQUEST['Rtitle3'];
     $api = $this->model('Api');
     $api->recommend($title1, $title2, $title3);
+    $api->getmovie($_SESSION['recommendation']['candidates'][0]['content']['parts'][0]['text']);
   }
 
   public function result() {
