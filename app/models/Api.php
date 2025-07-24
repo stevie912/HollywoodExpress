@@ -43,7 +43,7 @@ class Api {
         if(curl_errno($ch)) {
             echo 'Curl error:' . curl_error($ch);
         }
-        $_SESSION['recommendation'] = json_decode($response, true);
+        $_SESSION['recommendation'] = (array)json_decode($response, true);
     }
 
     public function review($title) {

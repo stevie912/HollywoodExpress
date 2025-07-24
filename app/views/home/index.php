@@ -1,57 +1,46 @@
 <?php require_once 'app/views/templates/header.php' ?>
-<div class="container">
-    <div class="page-header" id="banner">
-        <div class="row justify-content-center text-center">
-            <div class="col-lg-12 text-center">
-                <br>
-                <h1 class="display-1">Hollywood Express</h1>
-                <p class="display-6">The movie search and recommendation engine</p>
-                <br>
-                <br>
-                <br>
-            </div>
                 
-            <div class="col-sm-6 text-center">
-                <p class="lead">Search a movie title:</p>
-                <form action="/search/get" method="post">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Movie title" aria-label="Movie title" aria-describedby="button-addon2" name="title">
-                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
-                    </div>
-                </form>
-                <br>
-                <br>
-            </div>    
-                
-            <p class="lead">Or, enter the titles of upto three favourite movies and we'll recommend a movie we think you'll like:</p>
-            
-            <div class="col-sm-6">
-                <form action="/search/reco" method="post">
-                    <fieldset>
-                      <div class="form-group">
-                        <label for="Rtitle1">Movie 1:</label>
-                        <input required type="text" id="Rtitle1" class="form-control" name="Rtitle1">
-                      </div>
-                      <div class="form-group">
-                        <label for="Rtitle2">Movie 2:</label>
-                        <input type="text" id="Rtitle2" class="form-control" name="Rtitle2">
-                      </div>
-                      <div class="form-group">
-                        <label for="Rtitle3">Movie 3:</label>
-                        <input type="text" id="Rtitle3" class="form-control" name="Rtitle3">
-                      </div>
-                        <br>
-                        <button class="btn btn-secondary" onclick="loading()" type="submit" value="submit">
-                            <i class="spinner-grow spinner-grow-sm" style="display:none;"></i>
-                            <span class="btn-text">Get my next favourite movie</span>
-                        </button>
-                    </fieldset>
-                </form>
+    <div class="col-sm-6 text-center">
+        <p class="lead">Search a movie title:</p>
+        <form action="/search/get" method="post">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Movie title" aria-label="Movie title" aria-describedby="button-addon2" name="title">
+                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
             </div>
+        </form>
+        <br>
+        <br>
+    </div>    
+        
+    <p class="lead text-center">Or, enter the titles of upto three favourite movies and we'll recommend a movie we think you'll like:</p>
+    
+    <div class="col-sm-6 justify-content-center text-center">
+        <form action="/search/reco" method="post">
+            <fieldset>
+              <div class="form-group">
+                <label for="Rtitle1">Movie 1:</label>
+                <input required type="text" id="Rtitle1" class="form-control" name="Rtitle1">
+              </div>
+              <div class="form-group">
+                <label for="Rtitle2">Movie 2:</label>
+                <input type="text" id="Rtitle2" class="form-control" name="Rtitle2">
+              </div>
+              <div class="form-group">
+                <label for="Rtitle3">Movie 3:</label>
+                <input type="text" id="Rtitle3" class="form-control" name="Rtitle3">
+              </div>
+                <br>
+                <button class="btn btn-secondary" onclick="loading()" type="submit" value="submit">
+                    <i class="spinner-grow spinner-grow-sm" style="display:none;"></i>
+                    <span class="btn-text">Get my next favourite movie</span>
+                </button>
+            </fieldset>
+        </form>
+    </div>
                     
-            </div>
         </div>
     </div>
+</div>
 
     <!-- toast for movie not found -->
     <?php if (isset($_SESSION['no_movie'])) { ?>
