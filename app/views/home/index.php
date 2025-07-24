@@ -41,7 +41,10 @@
                         <input type="text" id="Rtitle3" class="form-control" name="Rtitle3">
                       </div>
                         <br>
-                        <button type="submit" value ="submit" class="btn btn-secondary">Submit</button>
+                        <button class="btn btn-secondary" onclick="loading()" type="submit" value="submit">
+                            <i class="spinner-grow spinner-grow-sm" style="display:none;"></i>
+                            <span class="btn-text">Get my next favourite movie</span>
+                        </button>
                     </fieldset>
                 </form>
             </div>
@@ -86,4 +89,13 @@
          </div>																				 
     <?php unset($_SESSION['contact_stored']); } ?>
 
+<!-- script for recommendation button progress indicator -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        function loading() {
+          $(".btn .spinner-grow").show();
+          $(".btn .btn-text").html("Thinking...");
+        }
+    </script>
+    
 <?php require_once 'app/views/templates/footer.php' ?>

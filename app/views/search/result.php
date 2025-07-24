@@ -49,7 +49,7 @@
                 <div>
                     <form action="/search/review" method="post">
                             <!-- <button class="btn btn-secondary" id ="submitbtn" type="submit" name="title" value="<?php echo $_SESSION['movie']['Title'] ?>">Read a review</button> -->
-                        <button class="btn btn-secondary" id="submit" onclick="loading()" type="submit" name="title" value="<?php echo $_SESSION['movie']['Title'] ?>">
+                        <button class="btn btn-secondary" onclick="loading()" type="submit" name="title" value="<?php echo $_SESSION['movie']['Title'] ?>">
                             <i class="spinner-grow spinner-grow-sm" style="display:none;"></i>
                             <span class="btn-text">Read a review</span>
                         </button>
@@ -69,13 +69,13 @@
 
     </div>
 </div>
-                    
+
+ <!-- script for review button progress indicator -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
     function loading() {
       $(".btn .spinner-grow").show();
       $(".btn .btn-text").html("Loading");
-
     }
 </script>
 
