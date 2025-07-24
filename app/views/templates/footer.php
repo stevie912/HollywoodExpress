@@ -1,6 +1,6 @@
 
 </body>
-    <footer class="footer bg-light" style="margin-top: 100px;">
+    <footer class="footer text-bg-dark p-3" style="margin-top: 100px;">
       <div class="row align-items-center">
         <div class="col text-center">
             <br>

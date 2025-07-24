@@ -7,6 +7,8 @@
                 <h1 class="display-1">Hollywood Express</h1>
                 <p class="display-6">The movie search and recommendation engine</p>
                 <br>
+                <br>
+                <br>
             </div>
                 
             <div class="col-sm-6 text-center">

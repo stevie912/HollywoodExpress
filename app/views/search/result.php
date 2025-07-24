@@ -4,7 +4,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-12 text-center">
                 <br>
-                <h1 class="display-1">Hollywood Express</h1>
+                <a href="/home" style="text-decoration: none; color: inherit;"><h1 class="display-1">Hollywood Express</h1></a>    
                 <br>
             </div>
             
@@ -53,13 +53,12 @@
                     <br>
                 </div>
 <!-- display review -->
-                <div class="col-sm-12 text-center" id="review">
-                    <?php if (isset($_SESSION['review'])) {
-                        echo "<pre>";
-                        echo $_SESSION['review'];
-                        // echo $_SESSION['review']['candidates'][0]['content']['parts'][0]['text'];
-                        unset($_SESSION['review']);
-                    } ?>
+                <div class="col-sm-8 justify-content-center text-center" id="review">
+                    <?php if (isset($_SESSION['review'])) { ?>
+
+                        <p class="lead-1"><?php echo $_SESSION['review']['candidates'][0]['content']['parts'][0]['text']; ?></p>
+                        
+                    <?php unset($_SESSION['review']); } ?>
                 </div>
             </div>
         </div>

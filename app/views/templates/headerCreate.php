@@ -25,4 +25,4 @@ if (isset($_SESSION['pass_insecure'])) {
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
 </head>
-<body>
+<body class="text-bg-dark p-3">
