@@ -44,16 +44,20 @@
             </div>
 
 <!-- review section -->
-            <div class="col-sm-12 justify-content-center text-center">
+            <div class="col-sm-8 justify-content-center text-center">
 <!-- review button -->            
                 <div>
                     <form action="/search/review" method="post">
-                            <button class="btn btn-secondary" type="submit" name="title" value="<?php echo $_SESSION['movie']['Title'] ?>">Read a review</button>
+                            <!-- <button class="btn btn-secondary" id ="submitbtn" type="submit" name="title" value="<?php echo $_SESSION['movie']['Title'] ?>">Read a review</button> -->
+                        <button class="btn btn-secondary" id="submit" onclick="loading()" type="submit" name="title" value="<?php echo $_SESSION['movie']['Title'] ?>">
+                            <i class="spinner-grow spinner-grow-sm" style="display:none;"></i>
+                            <span class="btn-text">Read a review</span>
+                        </button>
                     </form>
                     <br>
                 </div>
 <!-- display review -->
-                <div class="col-sm-8 justify-content-center text-center" id="review">
+                <div >
                     <?php if (isset($_SESSION['review'])) { ?>
 
                         <p class="lead-1"><?php echo $_SESSION['review']['candidates'][0]['content']['parts'][0]['text']; ?></p>
@@ -65,5 +69,14 @@
 
     </div>
 </div>
+                    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    function loading() {
+      $(".btn .spinner-grow").show();
+      $(".btn .btn-text").html("Loading");
+
+    }
+</script>
 
 <?php require_once 'app/views/templates/footer.php' ?>
