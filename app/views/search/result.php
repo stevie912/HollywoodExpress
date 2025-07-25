@@ -3,6 +3,7 @@
 <!-- display search results --> 
     <div class="col-lg-12 text-center">
         <p class="display-6 text-center"><?php echo $_SESSION['movie']['Title'] . ' (' . $_SESSION['movie']['Year'] . ')' ?></p>
+        <br>
     </div>
     <div class="col-sm-3">
         <img src="<?php echo $_SESSION['movie']['Poster']?>" alt="Movie Poster" class="img-fluid">

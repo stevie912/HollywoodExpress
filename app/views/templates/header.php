@@ -47,14 +47,12 @@
         </div>
       </div>
     </nav>
-<div class="container">
-  <div class="page-header" id="banner">
-      <div class="row justify-content-center">
-          <div class="col-lg-12 text-center">
-              <br>
-              <a href="/home" style="text-decoration: none; color: inherit;"><h1 class="display-1" style="font-weight: 700; font-size: 6rem;">Hollywood Express</h1></a>
-              <p class="display-6">The movie search and recommendation engine</p>
-              <br>
-              <br>
-              <br>
-          </div>
+    <div class="container">
+      <div class="page-header" id="banner">
+          <div class="row justify-content-center">
+              <div class="col-lg-12 text-center">
+                  <a href="/home" style="text-decoration: none; color: inherit;"><h1 class="display-1" style="font-weight: 700; font-size: 6rem;">Hollywood Express</h1></a>
+                  <p class="display-6">The movie search and recommendation engine</p>
+                  <br>
+                  <br>
+              </div>

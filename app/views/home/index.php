@@ -12,7 +12,7 @@
         <br>
     </div>    
         
-    <p class="lead text-center">Or, enter the titles of upto three favourite movies and we'll recommend a movie we think you'll like:</p>
+    <p class="lead text-center">Or, let us choose.<br>Enter the titles of upto three movies and we'll recommend a movie we think you'll like:</p>
     
     <div class="col-sm-6 justify-content-center text-center">
         <form action="/search/reco" method="post">
