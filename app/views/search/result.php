@@ -28,7 +28,11 @@
             foreach ($ratings as $rating) { 
                 $total += $rating['rating'];
             }
-            $avg_rating = $total / count($ratings);
+            if (count($ratings) != 0) {
+                $avg_rating = $total / count($ratings);
+            } else {
+                $avg_rating = "No ratings yet";
+            }
         ?>
         <p class="lead-1">Average Hollywood Express user rating (/10): <?php 
              for ($i = 0; $i < (int)$avg_rating; $i++) {
@@ -80,11 +84,25 @@
 <!-- review button -->            
         <div>
             <form action="/search/review" method="post">
-                    <!-- <button class="btn btn-secondary" id ="submitbtn" type="submit" name="title" value="<?php echo $_SESSION['movie']['Title'] ?>">Read a review</button> -->
-                <button class="btn btn-secondary" onclick="loading()" type="submit" name="title" value="<?php echo $_SESSION['movie']['Title'] ?>">
+                <button class="btn btn-secondary mb-3" id="review" onclick="loading()" type="submit" name="title" value="<?php echo $_SESSION['movie']['Title'] ?>">
                     <i class="spinner-grow spinner-grow-sm" style="display:none;"></i>
                     <span class="btn-text">Read a review</span>
                 </button>
+                <input type="hidden" name="review_type" value="review">
+            </form>
+            <form action="/search/review" method="post">
+                <button class="btn btn-secondary mb-3" id="grumpy" onclick="loading2()" type="submit" name="title" value="<?php echo $_SESSION['movie']['Title'] ?>">
+                    <i class="spinner-grow spinner-grow-sm" id="grumpy" style="display:none;"></i>
+                    <span class="btn-text" id="grumpy">Read a grumpy review</span>
+                </button>
+                <input type="hidden" name="review_type" value="grumpy">
+            </form>
+            <form action="/search/review" method="post">
+                <button class="btn btn-secondary mb-3" id="shakespeare" onclick="loading3()" type="submit" name="title" value="<?php echo $_SESSION['movie']['Title'] ?>">
+                    <i class="spinner-grow spinner-grow-sm" id="shakespeare" style="display:none;"></i>
+                    <span class="btn-text" id="shakespeare">Read a review by Shakespeare</span>
+                </button>
+                <input type="hidden" name="review_type" value="shakespeare">
             </form>
             <br>
         </div>
@@ -104,8 +122,18 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
     function loading() {
-      $(".btn .spinner-grow").show();
-      $(".btn .btn-text").html("Loading");
+      $("#review .spinner-grow").show();
+      $("#review .btn-text").html("Loading");
+    }
+
+    function loading2() {
+      $("#grumpy .spinner-grow").show();
+      $("#grumpy .btn-text").html("Loading");
+    }
+
+    function loading3() {
+      $("#shakespeare .spinner-grow").show();
+      $("#shakespeare .btn-text").html("Loading");
     }
 </script>
 

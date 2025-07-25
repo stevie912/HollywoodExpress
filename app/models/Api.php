@@ -46,19 +46,45 @@ class Api {
         $_SESSION['recommendation'] = (array)json_decode($response, true);
     }
 
-    public function review($title) {
+    public function review($title, $type) {
         $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" . $_ENV['gemini_key'];
-        $data = array(
-            'contents' => array(
-                array(
-                    'parts' => array(
-                        array(
-                            'text' => "write a two paragraph movie review for the movie " . $title
+        if ($type == 'review') {
+            $data = array(
+                'contents' => array(
+                    array(
+                        'parts' => array(
+                            array(
+                                'text' => "write a two paragraph movie review for the movie " . $title
+                            )
                         )
                     )
                 )
-            )
-        );
+            );
+        } else if ($type == 'grumpy') {
+            $data = array(
+                'contents' => array(
+                    array(
+                        'parts' => array(
+                            array(
+                                'text' => "write a two paragraph movie review for the movie " . $title . " in a grumpy tone like it was written by a curmudgeon who doesn't like movies. Make sure to include some negative comments about the movie. It can also be a bit funny and complaining. It must reference the movie, include details about the movie, and be a review of the movie, not just grumping about movies in general."
+                            )
+                        )
+                    )
+                )
+            );
+        } else if ($type == 'shakespeare') {
+            $data = array(
+                'contents' => array(
+                    array(
+                        'parts' => array(
+                            array(
+                                'text' => "write a two paragraph movie review for the movie " . $title . " as if it was written by William Shakespeare. Make sure to include some Shakespearean phrases and references."
+                            )
+                        )
+                    )
+                )
+            );
+        }
         $json_data = json_encode($data);
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));

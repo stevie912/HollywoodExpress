@@ -35,8 +35,9 @@ class Search extends Controller {
 
   public function review() {
     $title = $_REQUEST['title'];
+    $type = $_REQUEST['review_type'];
     $api = $this->model('Api');
-    $api->review($title);
+    $api->review($title, $type);
     $this->view('/search/result');
   }
 }
