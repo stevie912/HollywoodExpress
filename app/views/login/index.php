@@ -11,6 +11,30 @@
         </div>
     </div>
 
+	<div class="row justify-content-center">
+			<div class="col-sm-auto">
+			<form action="/login/verify" method="post" >
+			<fieldset>
+				<div class="form-group">
+					<label for="username">Username</label>
+					<input required type="text" class="form-control" name="username">
+				</div>
+				<div class="form-group">
+					<label for="password">Password</label>
+					<input required type="password" class="form-control" name="password">
+				</div>
+				<br>
+				<button type="submit" class="btn btn-secondary">Login</button>
+			</fieldset>
+			</form> 
+				<br>
+				<br>
+				<a href="/create" class="link-secondary"><h5 class="text-center">Create new user</h5></a>
+				<br>
+		</div>
+	</div>
+
+
 <!-- alert for failed login attempt-->
 	<?php if (isset($_SESSION['failed_attempts']) || isset($_SESSION['no_user'])) { 	?> 
 					<div class="row">
@@ -36,28 +60,6 @@
 		 </div>																				 
 	<?php unset($_SESSION['user_created']); } ?>
 	
-<div class="row justify-content-center">
-    <div class="col-sm-auto">
-		<form action="/login/verify" method="post" >
-		<fieldset>
-			<div class="form-group">
-				<label for="username">Username</label>
-				<input required type="text" class="form-control" name="username">
-			</div>
-			<div class="form-group">
-				<label for="password">Password</label>
-				<input required type="password" class="form-control" name="password">
-			</div>
-      <br>
-		  <button type="submit" class="btn btn bg-primary-subtle ">Login</button>
-		</fieldset>
-		</form> 
-			<br>
-			<br>
-			<a href="/create" class="link-secondary"><h5 class="text-center">Create new user</h5></a>
-			<br>
-	</div>
-</div>
 
 
 	

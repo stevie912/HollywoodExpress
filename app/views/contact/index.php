@@ -19,8 +19,10 @@
         <input required type="email" id="email" class="form-control" name="email">
       </div>
       <br>
-      <button type="submit" value ="submit" class="btn bg-primary-subtle">Submit</button>
+      <button type="submit" value ="submit" class="btn btn-secondary">Submit</button>
     </fieldset>
     </form> 
   </div>
 </div>
+
+<?php require_once 'app/views/templates/footer.php' ?>

@@ -3,7 +3,10 @@
     <div class="page-header" id="banner">
         <div class="row">
             <div class="col-lg-12 text-center">
+                <br>
                 <h1>Create new user</h1>
+                <br>
+                <br>
             </div>
         </div>
     </div>
@@ -25,8 +28,10 @@
         <input required type="password" id="password2" class="form-control" name="password2">
        </div>
        <br>
-        <button type="submit" value ="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" value ="submit" class="btn btn-secondary">Submit</button>
     </fieldset>
     </form> 
   </div>
 </div>
+
+<?php require_once 'app/views/templates/footer.php' ?>
