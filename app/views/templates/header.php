@@ -19,7 +19,8 @@
   <div class="container"> -->
     <nav class="navbar sticky-top navbar-dark bg-dark" data-bs-theme="dark">
       <div class="container">
-        <a class="navbar-brand" href="/home">Hollywood</a>
+        <a class="navbar-brand" href="/home"><img src="/film-movie-reel-icon4.png" width="130" height="100" alt="Hollywood"></a>
+        <!-- <a class="navbar-brand" href="/home"><img src="/chair-director-icon.png" width="100" height="100" alt="Hollywood"></a> -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

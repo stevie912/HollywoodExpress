@@ -27,7 +27,7 @@
                 <input type="text" id="Rtitle3" class="form-control" name="Rtitle3" placeholder="Movie 3">
               </div>
                 <br>
-                <button class="btn btn-secondary" onclick="loading()" type="submit" value="submit">
+                <button class="btn btn-outline-secondary" onclick="loading()" type="submit" value="submit">
                     <i class="spinner-grow spinner-grow-sm" style="display:none;"></i>
                     <span class="btn-text">Get my next favourite movie</span>
                 </button>
