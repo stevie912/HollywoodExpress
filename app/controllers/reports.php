@@ -7,22 +7,11 @@ class Reports extends Controller {
     $this->view('reports/index');
   }
 
-  public function reminders_all() {
+  public function report() {
+    $type = $_REQUEST['report_type'];
     $report = $this->model('Report');
-    $reminders_list = $report->get_all_reminders();
-    $this->view('reports/reminders_all', ['reminders_list' => $reminders_list]);
-  }
-
-  public function reminders_user() {
-    $report = $this->model('Report');
-    $reminders_count = $report->get_reminders_count();
-    $this->view('reports/reminders_count', ['reminders_count' => $reminders_count]);
-  }
-
-  public function logins_user() {
-    $report = $this->model('Report');
-    $logins_count = $report->get_logins_count();
-    $this->view('reports/logins_count', ['logins_count' => $logins_count]);
+    $report->report($type);
+    $this->view('reports/index');
   }
 
 }

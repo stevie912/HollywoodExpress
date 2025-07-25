@@ -49,35 +49,6 @@
                 </form>
     </div>
 
-
-<!--*** alternate rating display, not in use*** -->
-<!-- <p class="lead-1">Hollywood Express user ratings (/10): </p>
-    <?php
-        $db = db_connect();
-        // $statement = $db->prepare("SELECT username, rating FROM users RIGHT JOIN ratings ON users.user_id = ratings.user_id WHERE movie_title = ?");
-        $statement = $db->prepare("SELECT rating FROM ratings WHERE movie_title = ?");
-        $statement->execute([$_SESSION['movie']['Title']]);
-        $ratings = $statement->fetchAll(PDO::FETCH_ASSOC);
-        $statement = $db->prepare("SELECT username FROM users JOIN ratings ON users.id = ratings.user_id WHERE movie_title = ?");
-        $statement->execute([$_SESSION['movie']['Title']]);
-        $usernames = $statement->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($ratings as $rating) { ?>
-            <p class="lead-1"> <?php echo $usernames . "\t" . $rating['rating'] . "\n"; ?></p>
-    <?php } ?>
-
-    <p class="lead-1">Leave a rating for this movie (/10): </p>
-        <form action="/search/rate" method="post">
-            <div class="input-group mb-3">
-                <input required type="number" class="form-control" aria-label="rating" aria-describedby="button-addon2" name="title">
-                <button class="btn btn-outline-secondary" type="submit" id="button-addon2" value="<?php echo $_SESSION['movie']['Title'] ?>">Submit</button>
-            </div>
-        </form>    
-    <?php
-        if (isset($_SESSION['rating'])) { ?>
-            <p class="lead-1">Your rating: <?php echo $_SESSION['rating'] ?></p>
-    <?php    unset($_SESSION['rating']); }    ?>
-</div> -->
-<!-- ***end of alternate rating display*** -->
             
 
 <!-- review section -->
@@ -110,7 +81,7 @@
 <!-- display review -->
         <div >
             <?php if (isset($_SESSION['review'])) { ?>
-                <p class="lead-1"><?php echo $_SESSION['review']['candidates'][0]['content']['parts'][0]['text']; ?></p>
+                <p class="lead-1" id="target"><?php echo $_SESSION['review']['candidates'][0]['content']['parts'][0]['text']; ?></p>
             <?php unset($_SESSION['review']); } ?>
         </div>
     </div>
@@ -136,6 +107,16 @@
       $("#shakespeare .spinner-grow").show();
       $("#shakespeare .btn-text").html("Loading");
     }
+</script>
+<!-- script to scroll to review when it is displayed -->
+<script> 
+    window.addEventListener('load', function() {
+        const targetElement = document.getElementById('target');
+
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
+        }
+    });
 </script>
 
 <?php require_once 'app/views/templates/footer.php' ?>

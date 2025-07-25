@@ -10,29 +10,21 @@ class Report {
 
     }
 
-    public function get_all_reminders () {
+  public function report($type) {
+    if ($type == 'ratings') {
       $db = db_connect();
-      $statement = $db->prepare("select * from reminders;");
+      $statement = $db->prepare("select * from ratings;");
       $statement->execute();
       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-      return $rows;
-    }
-
-    public function get_reminders_count () {
-      $db = db_connect();
-      $statement = $db->prepare("select user_id as id, count(*) as user_count from reminders group by user_id;");
-      $statement->execute();
-      $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-      return $rows;
-    }
-
-    public function get_logins_count () {
+      $_SESSION['ratings_report'] = (array)$rows;
+    } else if ($type == 'logins') {
       $db = db_connect();
       $statement = $db->prepare("select username as user, count(*) as user_count from logins group by username;");
       $statement->execute();
       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-      return $rows;
+      $_SESSION['logins_report'] = (array)$rows;
     }
+  }
 
 }
 ?>
