@@ -1,7 +1,7 @@
 <?php require_once 'app/views/templates/header.php' ?>
                 
     <div class="col-sm-6 text-center">
-        <p class="lead">Search a movie title:</p>
+        <p class="lead">Search for a movie:</p>
         <form action="/search/get" method="post">
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Movie title" aria-label="Movie title" aria-describedby="button-addon2" name="title">
@@ -17,17 +17,14 @@
     <div class="col-sm-6 justify-content-center text-center">
         <form action="/search/reco" method="post">
             <fieldset>
-              <div class="form-group">
-                <label for="Rtitle1">Movie 1:</label>
-                <input required type="text" id="Rtitle1" class="form-control" name="Rtitle1">
+              <div class="form-group mb-3">
+                <input required type="text" id="Rtitle1" class="form-control" name="Rtitle1" placeholder="Movie 1">
               </div>
-              <div class="form-group">
-                <label for="Rtitle2">Movie 2:</label>
-                <input type="text" id="Rtitle2" class="form-control" name="Rtitle2">
+              <div class="form-group mb-3">
+                <input type="text" id="Rtitle2" class="form-control" name="Rtitle2" placeholder="Movie 2">
               </div>
-              <div class="form-group">
-                <label for="Rtitle3">Movie 3:</label>
-                <input type="text" id="Rtitle3" class="form-control" name="Rtitle3">
+              <div class="form-group mb-3">
+                <input type="text" id="Rtitle3" class="form-control" name="Rtitle3" placeholder="Movie 3">
               </div>
                 <br>
                 <button class="btn btn-secondary" onclick="loading()" type="submit" value="submit">

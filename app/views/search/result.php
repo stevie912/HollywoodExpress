@@ -19,21 +19,61 @@
             } ?>
         </p>
         <p class="lead-1">Box office revenue: <?php echo $_SESSION['movie']['BoxOffice']?></p>
-        <p class="lead-1">Your rating of this movie (/10): <?php 
-            if (isset($_SESSION['rating'])) {
-                for ($i = 0; $i < $_SESSION['rating']; $i++) {
-                    echo "★";
-                }
-                unset($_SESSION['rating']);
-            } else { ?>
+        <?php
+            $db = db_connect();
+            $statement = $db->prepare("SELECT rating FROM ratings WHERE movie_title = ?");
+            $statement->execute([$_SESSION['movie']['Title']]);
+            $ratings = $statement->fetchAll(PDO::FETCH_ASSOC);
+            $total = 0;
+            foreach ($ratings as $rating) { 
+                $total += $rating['rating'];
+            }
+            $avg_rating = $total / count($ratings);
+        ?>
+        <p class="lead-1">Average Hollywood Express user rating (/10): <?php 
+             for ($i = 0; $i < (int)$avg_rating; $i++) {
+                 echo "★";
+             }
+            ?></p>
+
+        <p class="lead-1">Leave a rating for this movie (/10): </p>
                 <form action="/search/rate" method="post">
                     <input type="number" name="rating" min="1" max="10" step="1">
                     <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Rate</button>
                     <input type="hidden" name="title" value="<?php echo $_SESSION['movie']['Title']?>">
                 </form>
-            <?php }
-        ?></p>
     </div>
+
+
+<!--*** alternate rating display, not in use*** -->
+<!-- <p class="lead-1">Hollywood Express user ratings (/10): </p>
+    <?php
+        $db = db_connect();
+        // $statement = $db->prepare("SELECT username, rating FROM users RIGHT JOIN ratings ON users.user_id = ratings.user_id WHERE movie_title = ?");
+        $statement = $db->prepare("SELECT rating FROM ratings WHERE movie_title = ?");
+        $statement->execute([$_SESSION['movie']['Title']]);
+        $ratings = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $statement = $db->prepare("SELECT username FROM users JOIN ratings ON users.id = ratings.user_id WHERE movie_title = ?");
+        $statement->execute([$_SESSION['movie']['Title']]);
+        $usernames = $statement->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($ratings as $rating) { ?>
+            <p class="lead-1"> <?php echo $usernames . "\t" . $rating['rating'] . "\n"; ?></p>
+    <?php } ?>
+
+    <p class="lead-1">Leave a rating for this movie (/10): </p>
+        <form action="/search/rate" method="post">
+            <div class="input-group mb-3">
+                <input required type="number" class="form-control" aria-label="rating" aria-describedby="button-addon2" name="title">
+                <button class="btn btn-outline-secondary" type="submit" id="button-addon2" value="<?php echo $_SESSION['movie']['Title'] ?>">Submit</button>
+            </div>
+        </form>    
+    <?php
+        if (isset($_SESSION['rating'])) { ?>
+            <p class="lead-1">Your rating: <?php echo $_SESSION['rating'] ?></p>
+    <?php    unset($_SESSION['rating']); }    ?>
+</div> -->
+<!-- ***end of alternate rating display*** -->
+            
 
 <!-- review section -->
     <div class="col-sm-8 justify-content-center text-center">
