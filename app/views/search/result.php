@@ -48,7 +48,6 @@
                     <input type="hidden" name="title" value="<?php echo $_SESSION['movie']['Title']?>">
                 </form>
     </div>
-
             
 
 <!-- review section -->

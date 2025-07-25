@@ -1,7 +1,7 @@
 <?php
 class Search extends Controller {
 
-  public function index() {    //do we need this???
+  public function index() {    
      $this->view('search/index');
    }
 

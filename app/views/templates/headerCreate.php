@@ -31,11 +31,10 @@ if (isset($_SESSION['pass_insecure'])) {
         <meta name="robots" content="noindex, nofollow"
     </head>
     <body class="text-bg-dark p-3">
-    <!-- <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" data-bs-theme="dark">
-  <div class="container"> -->
     <nav class="navbar sticky-top navbar-dark bg-dark" data-bs-theme="dark">
       <div class="container">
-        <a class="navbar-brand" href="/home">Hollywood</a>
+      <a class="navbar-brand" href="/home"><img src="/film-movie-reel-icon4.png" width="130" height="100" alt="Hollywood"></a>
+      <!-- <a class="navbar-brand" href="/home"><img src="/chair-director-icon.png" width="100" height="100" alt="Hollywood"></a> -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -66,10 +65,8 @@ if (isset($_SESSION['pass_insecure'])) {
   <div class="page-header" id="banner">
       <div class="row justify-content-center">
           <div class="col-lg-12 text-center">
-              <br>
               <a href="/home" style="text-decoration: none; color: inherit;"><h1 class="display-1" style="font-weight: 700; font-size: 6rem;">Hollywood Express</h1></a>
               <p class="display-6">The movie search and recommendation engine</p>
-              <br>
               <br>
               <br>
           </div>

@@ -13,7 +13,7 @@ class Report {
   public function report($type) {
     if ($type == 'ratings') {
       $db = db_connect();
-      $statement = $db->prepare("select * from ratings;");
+      $statement = $db->prepare("select * from ratings group by movie_title, rating, user_id order by movie_title;");
       $statement->execute();
       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
       $_SESSION['ratings_report'] = (array)$rows;

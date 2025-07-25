@@ -15,8 +15,6 @@
         <meta name="robots" content="noindex, nofollow"
     </head>
     <body class="text-bg-dark p-3">
-    <!-- <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" data-bs-theme="dark">
-  <div class="container"> -->
     <nav class="navbar sticky-top navbar-dark bg-dark" data-bs-theme="dark">
       <div class="container">
         <a class="navbar-brand" href="/home"><img src="/film-movie-reel-icon4.png" width="130" height="100" alt="Hollywood"></a>
